@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingTop="16dp" android:paddingLeft="16dp" android:paddingRight="16dp">
+
+    <EditText
+        android:drawableLeft="@drawable/heightbmi"
+        android:hint="@string/height_bmi"
+        android:inputType="numberDecimal"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="20dp"
+        android:drawablePadding="10dp"
+        android:textColor="@color/TextColor"
+        android:textColorHint="@color/HintColor"
+        android:id="@+id/heightBmi" />
+    <EditText
+        android:drawableLeft="@drawable/weightbmi"
+        android:inputType="numberDecimal"
+        android:hint="@string/weight_bmi"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="20dp"
+        android:drawablePadding="10dp"
+        android:textColor="@color/TextColor"
+        android:textColorHint="@color/HintColor"
+        android:id="@+id/weightBmi" />
+    <Button
+        android:text="@string/calculate"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+
+        android:textColor="@color/SubText"
+        android:textSize="40px"
+        android:id="@+id/calculateBmiButton" />
+    <Button
+        android:id="@+id/bmi_back_to_menu"
+        android:text="Back to menu"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+
+        android:textColor="@color/SubText"
+        android:textSize="40px"></Button>
+    <TextView
+        android:id="@+id/result_text_bmi"
+        android:text="No Calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:paddingTop="90dp"
+        android:paddingBottom="90dp"
+        android:textSize="20dp"/>
+    <FrameLayout android:id="@+id/bmi_view" android:layout_width="match_parent" android:layout_height="match_parent">
+
+    </FrameLayout>
+</LinearLayout>
