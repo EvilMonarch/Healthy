@@ -1,4 +1,4 @@
-package itkmitl.a59070016.healthy.weight;
+package itkmitl.a59070016.healthy.Weight;
 
 import android.content.Context;
 import android.graphics.Color;

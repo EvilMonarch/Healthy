@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
-
 public class LogoutFragment extends Fragment {
 
     @Override
@@ -17,3 +16,4 @@ public class LogoutFragment extends Fragment {
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view,new LoginFragment()).addToBackStack(null).commit();
     }
 }
+

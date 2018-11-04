@@ -1,4 +1,4 @@
-package itkmitl.a59070016.healthy.weight;
+package itkmitl.a59070016.healthy.Weight;
 
 public class WeightStore {
     float weight;

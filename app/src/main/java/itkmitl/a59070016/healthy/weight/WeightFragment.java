@@ -1,10 +1,10 @@
-package itkmitl.a59070016.healthy.weight;
+package itkmitl.a59070016.healthy.Weight;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,7 +59,6 @@ public class WeightFragment extends Fragment {
                 if (task.isSuccessful()) {
                     for (DocumentSnapshot document : task.getResult()) {
                         weightStore.add(document.toObject(WeightStore.class));
-
                     }
                 }
 

@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "25.0.0"
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "itkmitl.a59070016.healthy"
         minSdkVersion 23
@@ -30,9 +30,10 @@ dependencies {
     })
     //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.google.firebase:firebase-firestore:11.8.0'
-    compile 'com.google.firebase:firebase-database:11.8.0'
-    compile 'com.google.firebase:firebase-auth:11.8.0'
+    implementation 'com.google.firebase:firebase-core:11.6.2'
+    compile 'com.google.firebase:firebase-firestore:11.6.2'
+    compile 'com.google.firebase:firebase-database:11.6.2'
+    compile 'com.google.firebase:firebase-auth:11.6.2'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support.constraint:constraint-layout:1.1.3'
 }

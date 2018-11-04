@@ -23,7 +23,6 @@ import com.google.firebase.auth.FirebaseUser;
 /**
  * Created by LAB203_13 on 20/8/2561.
  */
-
 public class RegisterFragment extends Fragment{
     @Nullable
     @Override
@@ -32,7 +31,7 @@ public class RegisterFragment extends Fragment{
     }
 
     boolean checkPassword(String passwrod, String rePassword){
-        if(passwrod.length() > 5){
+        if(passwrod.length() >= 6){
             if(passwrod.equals(rePassword)) {
                 return true;
             }else{
@@ -82,29 +81,24 @@ public class RegisterFragment extends Fragment{
                 }else if(emailStr.equals("admin@admin.com")){
                     Toast.makeText(getActivity(), "user นี้มีอยู่ในระบบแล้ว", Toast.LENGTH_SHORT).show();
                     Log.i("REGISTER","USER ALREADY EXITS");
-                }else if(passwordIdStr.length() < 6) {
-                    Toast.makeText(getActivity(), "Password ต้องมี 6 ตัวอักษรขึ้นไป", Toast.LENGTH_SHORT).show();
-                }else if(passwordIdStr.equals(rePasswordStr)) {
-                    //Firebase Register
-                    final FirebaseAuth mAuth = FirebaseAuth.getInstance();
-                    mAuth.createUserWithEmailAndPassword(emailStr, passwordIdStr).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                        @Override
-                        public void onSuccess(AuthResult authResult) {
-                            Log.i("Register", "Complete");
-                            sendVerifiedEmail(authResult.getUser());
-                            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new LogoutFragment()).addToBackStack(null).commit();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
+                }else{
+                    if(checkPasswordBool) {
+                        //Firebase Register
+                        final FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                        mAuth.createUserWithEmailAndPassword(emailStr, passwordIdStr).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+                                Log.i("Register", "Complete");
+                                sendVerifiedEmail(authResult.getUser());
+                                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new LogoutFragment()).addToBackStack(null).commit();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
-               else{
-
-                    Toast.makeText(getActivity(),"Password ไม่ตรงกัน", Toast.LENGTH_SHORT).show();
                 }
             }
         });

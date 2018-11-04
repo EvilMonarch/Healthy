@@ -1,4 +1,4 @@
-package itkmitl.a59070016.healthy;
+package com.pleng.healthy.healthy;
 
 import org.junit.Test;
 

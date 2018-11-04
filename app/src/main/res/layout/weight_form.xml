@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/date_for_weight_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="วัน-เดือน-ปี(15-09-2561)"/>
+    <EditText
+        android:id="@+id/weight_for_weight_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="น้ำหนัก (kg)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/TextColor"
+        android:textColorHint="@color/HintColor"/>
+    <Button
+        android:id="@+id/save_weight_form"
+        android:text="บันทึก"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/weightform_back_to_menu_button"
+
+
+        android:text="Back to menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    />
+</LinearLayout>
