@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/fragment_sleep_form_backToSleepListView"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+
+        android:text="Back to menu"
+        android:textColor="@color/TextColor"
+        android:textSize="40px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <EditText
+        android:id="@+id/fragment_sleep_form_sleepTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="เวลาเข้านอน(20.30)"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_sleep_form_backToSleepListView" />
+
+    <EditText
+        android:id="@+id/fragment_sleep_form_wakeUpTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="เวลาตื่นนอน(5.30)"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_sleep_form_sleepTime" />
+    <EditText
+        android:id="@+id/fragment_sleep_form_datetime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="วัน-เดือน-ปี(15-09-2561)"
+
+
+        app:layout_constraintTop_toBottomOf="@+id/fragment_sleep_form_wakeUpTime" />
+
+
+    <Button
+        android:id="@+id/fragment_sleep_form_addTimeButton"
+        android:layout_width="350dp"
+        android:layout_height="64dp"
+
+        android:layout_marginTop="8dp"
+        android:text="Add Now"
+        android:textColor="@color/SubText"
+        android:textSize="40px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_sleep_form_datetime" />
+
+</android.support.constraint.ConstraintLayout>

@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import itkmitl.a59070016.healthy.MenuFragment;
+
 import itkmitl.a59070016.healthy.R;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class WeightForm extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.weight_form, container, false);
+        return inflater.inflate(R.layout.fragment_weightform, container, false);
     }
     TextView dateField, weight;
 

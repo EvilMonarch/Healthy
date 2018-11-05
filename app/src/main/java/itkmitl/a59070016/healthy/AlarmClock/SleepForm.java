@@ -4,24 +4,19 @@ package itkmitl.a59070016.healthy.AlarmClock;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import itkmitl.a59070016.healthy.DBHelper;
+import itkmitl.a59070016.healthy.Count;
 import itkmitl.a59070016.healthy.R;
 
 
@@ -40,7 +35,7 @@ public class SleepForm extends Fragment{
     private String differenceTime, time1, time2, dateStr;
     private ParsePosition pp1,pp2,pp3,pp4;
     private SleepStore sleepStore;
-    private DBHelper myDB;
+    private Count myDB;
     public SleepForm(){
         mCurrentDate = Calendar.getInstance();
         mYear = mCurrentDate.get(Calendar.YEAR);
@@ -52,7 +47,7 @@ public class SleepForm extends Fragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        myDB = new DBHelper(getContext());
+        myDB = new Count(getContext());
         dateField = (TextView) getView().findViewById(R.id.fragment_sleep_form_datetime);
         wakeUpTime = (TextView) getView().findViewById(R.id.fragment_sleep_form_wakeUpTime);
         sleepTime = (TextView) getView().findViewById(R.id.fragment_sleep_form_sleepTime);
@@ -61,27 +56,6 @@ public class SleepForm extends Fragment{
 
 
 
-        dateField.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                datePickerPopup(dateField);
-            }
-        });
-        sleepTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                timePickerPopup(sleepTime);
-
-            }
-        });
-
-        wakeUpTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                timePickerPopup(wakeUpTime);
-
-            }
-        });
 
 
 
@@ -191,7 +165,7 @@ public class SleepForm extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_sleep_form, container, false);
+        return inflater.inflate(R.layout.fragment_sleepform, container, false);
     }
 
 

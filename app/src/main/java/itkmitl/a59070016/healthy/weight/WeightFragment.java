@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,9 +35,9 @@ public class WeightFragment extends Fragment {
 
         this.uid = _user.getUid();
         final ListView weightList = (ListView) getView().findViewById(R.id.weight_list);
-        final WeightConfigItem weightConfigItem =  new WeightConfigItem(
+        final WeightConfig weightConfig =  new WeightConfig(
                 getActivity(),
-                R.layout.fragment_weight_items,
+                R.layout.fragment_weightitems,
                 weightStore
         );
 
@@ -49,8 +48,8 @@ public class WeightFragment extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new WeightForm()).addToBackStack(null).commit();
             }
         });
-        weightList.setAdapter(weightConfigItem);
-        weightConfigItem.clear();
+        weightList.setAdapter(weightConfig);
+        weightConfig.clear();
 
 
         db.collection("myfitness").document(uid).collection("weight").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -67,7 +66,7 @@ public class WeightFragment extends Fragment {
 
 
 
-                weightConfigItem.sort(new Comparator<WeightStore>() {
+                weightConfig.sort(new Comparator<WeightStore>() {
                     @Override
                     public int compare(WeightStore o1, WeightStore o2) {
                         return o2.getDate().compareTo(o1.getDate());
@@ -75,7 +74,7 @@ public class WeightFragment extends Fragment {
                 });
 
                 updateStatusToFirestore(weightStore);
-                weightConfigItem.notifyDataSetChanged();
+                weightConfig.notifyDataSetChanged();
             }
         });
 
