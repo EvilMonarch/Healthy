@@ -13,8 +13,9 @@ import android.widget.ListView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import itkmitl.a59070016.healthy.AlarmClock.SleepFragment;
+import itkmitl.a59070016.healthy.Sleep.SleepFragment;
 
+import itkmitl.a59070016.healthy.Post_Comment.PostFragment;
 import itkmitl.a59070016.healthy.Weight.WeightFragment;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class MenuFragment extends Fragment {
         menu.add("BMI");
         menu.add("Weight");
         menu.add("Sleep");
+        menu.add("Post");
         menu.add("Setup");
         menu.add("Sign Out");
 
@@ -56,6 +58,10 @@ public class MenuFragment extends Fragment {
                         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new SleepFragment()).addToBackStack(null).commit();
 
                 } else if (menuPosition.equals("Setup")) {
+                    }
+                    else if (menuPosition.equals("Post")) {
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new PostFragment()).addToBackStack(null).commit();
+
                     }
                     else {
                         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new WeightFragment()).addToBackStack(null).commit();

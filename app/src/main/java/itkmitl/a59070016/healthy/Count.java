@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
-import itkmitl.a59070016.healthy.AlarmClock.SleepStore;
+import itkmitl.a59070016.healthy.Sleep.SleepStore;
 
 import java.util.ArrayList;
 import java.util.List;
